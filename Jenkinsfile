@@ -1,11 +1,13 @@
 pipeline {
     agent any
+    tools {nodejs "node"}
+
     environment {
-        AWS_ACCOUNT_ID="851725600699"
-        AWS_DEFAULT_REGION="us-east-1"
+        AWS_ACCOUNT_ID="80000000000"
+        AWS_DEFAULT_REGION="us-west-1"
         IMAGE_REPO_NAME="aws-ecr-node"
         IMAGE_TAG="latest"
-        REPOSITORY_URI = "851725600699.dkr.ecr.us-east-1.amazonaws.com/aws-ecr-node"
+        REPOSITORY_URI = "80000000000.dkr.ecr.us-east-1.amazonaws.com/aws-ecr-node"
     }
    
     stages {
@@ -35,7 +37,7 @@ pipeline {
       }
     }
 
-    stage('build node'){
+    stage('intialising npm installation.......'){
         steps{
             sh 'npm install'
         }
